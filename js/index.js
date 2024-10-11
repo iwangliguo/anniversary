@@ -230,7 +230,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         var $chatbox = $('#mobile-body-content');
 
         var distance = $chatbox[0].scrollHeight - $chatbox.height() - $chatbox.scrollTop();
-        var duration = 250;
+        var duration = 500;
         var startTime = Date.now();
 
         requestAnimationFrame(function step() {
