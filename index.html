@@ -18,6 +18,9 @@
         <link rel="preload" href="img/aug.jpg" as="image">
         <link rel="preload" href="img/sept.jpg" as="image">
         <link rel="preload" href="img/oct.jpg" as="image">
+        <link rel="preload" href="audio/少女的祈祷.m4a" as="audio">
+        <link rel="preload" href="audio/少女的祈祷.ogg" as="audio">
+        <link rel="preload" href="audio/少女的祈祷.mp3" as="audio">
     </head>
     <body>
         <div id="mobile" :class="{ 'has-prompt': hasPrompt }">
@@ -79,6 +82,14 @@
                 源码
             </a>
         </div>
+
+        <!-- Audio tag for background music -->
+        <audio autoplay loop>
+            <source src="audio/少女的祈祷.m4a" type="audio/mp4">
+            <source src="audio/少女的祈祷.ogg" type="audio/ogg">
+            <source src="audio/少女的祈祷.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+        </audio>
 
         <script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
         <script src="//cdn.bootcss.com/vue/2.2.6/vue.min.js"></script>
