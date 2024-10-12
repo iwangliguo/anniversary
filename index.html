@@ -25,8 +25,9 @@
     <body>
         <div id="mobile" :class="{ 'has-prompt': hasPrompt }">
             <div id="mobile-head">
-                <div id="mobile-head-title">与哥哥聊天中</div>
+                <div id="mobile-head-title">💑与哥哥聊天中</div>
             </div>
+            
             <div id="mobile-body">
                 <div id="mobile-body-bg"></div>
                 <div id="mobile-body-content">
@@ -83,14 +84,32 @@
             </a>
         </div>
 
-        <!-- Audio tag for background music -->
-        <button onclick="document.getElementById('bg-music').play()">播放音乐</button>
-        <audio id="bg-music" loop>
-            <source src="audio/sndqd.m4a" type="audio/mp4">
-            <source src="audio/sndqd.ogg" type="audio/ogg">
-            <source src="audio/sndqd.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-        </audio>
+         <!-- Audio tag for background music -->
+         <!-- <button onclick="document.getElementById('bg-music').play()">🎵🎵🎵</button> -->
+         <audio id="bg-music" loop>
+             <source src="audio/sndqd.m4a" type="audio/mp4">
+             <source src="audio/sndqd.ogg" type="audio/ogg">
+             <source src="audio/sndqd.mp3" type="audio/mpeg">
+             Your browser does not support the audio element.
+         </audio>
+         <script>
+            function enableAudioOnInteraction() {
+                var audio = document.getElementById('bg-music');
+        
+                audio.play().then(function() {
+                    console.log("音乐正在播放");
+                }).catch(function(error) {
+                    console.log("无法播放音乐:", error);
+                });
+        
+                // 移除两个事件监听器
+                document.removeEventListener('touchstart', enableAudioOnInteraction);
+                document.removeEventListener('click', enableAudioOnInteraction);
+            }
+        
+            document.addEventListener('touchstart', enableAudioOnInteraction);
+            document.addEventListener('click', enableAudioOnInteraction);
+        </script>
 
         <script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
         <script src="//cdn.bootcss.com/vue/2.2.6/vue.min.js"></script>
