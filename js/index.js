@@ -69,7 +69,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
                 getRandomMsg(dialog.details).forEach(function (content) {
                     _this2.msgChain = _this2.msgChain.then(function () {
-                        return delay(700*1.5);
+                        return delay(700*2);
                     }).then(function () {
                         return _this2.sendMsg(content, AUTHOR.AUTHOR);
                     });
@@ -107,10 +107,10 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
                     this.markMsgSize(msg);
                     setTimeout(updateScroll);
 
-                    return delay(Math.min(100 * length * 1.5, 2000 * 1.5)).then(function () {
+                    return delay(Math.min(100 * length * 2, 2000 * 2)).then(function () {
                         return _this3.markMsgSize(msg, content);
                     }).then(function () {
-                        return delay(150 * 1.5);
+                        return delay(150 * 2);
                     }).then(function () {
                         msg.content = content;
                         onMessageSending();
@@ -180,12 +180,12 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
                 // close prompt
                 this.hasPrompt = false;
 
-                return delay(200 * 1.5)
+                return delay(200 * 2)
                 // send user msg
                 .then(function () {
                     return _this5.sendMsg(content, AUTHOR.ME);
                 }).then(function () {
-                    return delay(300 * 1.5);
+                    return delay(300 * 2);
                 })
                 // add author's next dialogs
                 .then(function () {

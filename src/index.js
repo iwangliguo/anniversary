@@ -62,7 +62,7 @@
                 getRandomMsg(dialog.details)
                     .forEach(content => {
                         this.msgChain = this.msgChain
-                            .then(() => delay(700))
+                            .then(() => delay(700 * 2))
                             .then(() => this.sendMsg(content, AUTHOR.AUTHOR));
                     });
 
@@ -100,11 +100,11 @@
                     this.markMsgSize(msg);
                     setTimeout(updateScroll);
 
-                    return delay(Math.min(100 * length, 2000))
+                    return delay(Math.min(100 * length * 2, 2000 * 2))
                         .then(() => {
                             return this.markMsgSize(msg, content);
                         })
-                        .then(() => delay(150))
+                        .then(() => delay(150 * 2))
                         .then(() => {
                             msg.content = content;
                             onMessageSending();
@@ -174,10 +174,10 @@
                 // close prompt
                 this.hasPrompt = false;
 
-                return delay(200)
+                return delay(200 * 2)
                     // send user msg
                     .then(() => this.sendMsg(content, AUTHOR.ME))
-                    .then(() => delay(300))
+                    .then(() => delay(300 * 2))
                     // add author's next dialogs
                     .then(() => this.appendDialog(dialogId));
             }
