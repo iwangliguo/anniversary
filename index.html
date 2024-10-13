@@ -12,6 +12,27 @@
                 text-align: center; /* 将图案居中 */
                 font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "sans-serif";
             }
+
+             /* 隐藏audio控件，保持简洁 */
+            audio {
+                display: none;
+            }
+
+            /* 添加简单的提示，让用户知道需要交互 */
+            .play-music-btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 10px 20px;
+                font-size: 18px;
+                background-color: #eee8f9;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                z-index: 1000;
+            }
         </style>
         <link href="css/main.min.css" rel="stylesheet" type="text/css">
         <link rel="Shortcut Icon" href="favicon.ico"/>
@@ -101,9 +122,31 @@
              <source src="audio/sndqd.mp3" type="audio/mpeg">
              Your browser does not support the audio element.
          </audio>
+
+         <!-- 交互按钮，提示用户需要点击播放音乐 -->
+         <button class="play-music-btn" id="play-music-btn">播放背景音乐</button>
+
          <script>
+
+            const playButton = document.getElementById('play-music-btn');
+            const audio = document.getElementById('bg-music');
+
+            // 点击或触摸屏幕后，播放音乐并隐藏按钮
+            function playMusic() {
+                audio.play().then(() => {
+                    // 音乐播放成功后，隐藏按钮
+                    playButton.style.display = 'none';
+                }).catch((error) => {
+                    console.error('音乐播放失败:', error);
+                });
+            }
+
+            // 监听用户交互事件
+            playButton.addEventListener('click', playMusic);
+            playButton.addEventListener('touchstart', playMusic);
+
             function enableAudioOnInteraction() {
-                var audio = document.getElementById('bg-music');
+                // var audio = document.getElementById('bg-music');
                 audio.volume = 0.5; // 设置音量为50%
                 audio.play().then(function() {
                     console.log("音乐正在播放");
