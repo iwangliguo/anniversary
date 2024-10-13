@@ -34,49 +34,28 @@
                 z-index: 1000;
             } */
                 /* 爱心按钮样式 */
-                .play-music-btn {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%) rotate(45deg); /* 旋转 45 度 */
-                    width: 100px; /* 调整宽度 */
-                    height: 100px; /* 调整高度 */
-                    background-color: #f06; /* 按钮颜色 */
-                    border: none;
-                    border-radius: 50%; /* 变为圆形以便后续调整 */
-                    cursor: pointer;
-                }
+            .play-music-btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100px; /* 按钮宽度 */
+                height: 100px; /* 按钮高度 */
+                background-color: #f06; /* 按钮颜色 */
+                clip-path: path('M50 0 L100 50 A50 50 0 1 1 0 50 A50 50 0 1 1 50 0 Z'); /* 使用 clip-path 创建爱心形状 */
+                border: none;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center; /* 垂直居中 */
+            }
 
-                .play-music-btn:before,
-                .play-music-btn:after {
-                    content: '';
-                    position: absolute;
-                    width: 100px; /* 左右半圆的宽度 */
-                    height: 100px; /* 左右半圆的高度 */
-                    background-color: #f06; /* 半圆的颜色 */
-                    border-radius: 50%; /* 半圆形 */
-                }
-
-                .play-music-btn:before {
-                    left: 0; /* 左半圆的位置 */
-                    top: 0; /* 向上移动 */
-                }
-
-                .play-music-btn:after {
-                    right: 0; /* 右半圆的位置 */
-                    top: 0; /* 向上移动 */
-                }
-
-                /* 提示文字居中 */
-                .play-music-btn span {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%) rotate(-45deg); /* 反转旋转 */
-                    font-size: 16px;
-                    color: white; /* 文字颜色 */
-                    text-align: center; /* 文字居中 */
-                }
+            /* 按钮文本样式 */
+            .play-music-btn span {
+                font-size: 16px;
+                color: rgb(25, 12, 95); /* 文字颜色 */
+                text-align: center; /* 文字居中 */
+            }
         </style>
         <link href="css/main.min.css" rel="stylesheet" type="text/css">
         <link rel="Shortcut Icon" href="favicon.ico"/>
