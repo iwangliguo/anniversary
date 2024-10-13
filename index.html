@@ -41,7 +41,7 @@
             left: 50%;
             border: none;
             position: absolute;
-            transform: rotate(45deg);
+            transform:  translate(-50%, -50%) rotate(45deg);
             background-color: #f06;
             display: flex;
             justify-content: center;
@@ -62,6 +62,17 @@
             .play-music-btn:after{
                 left: 0;
                 top: -50px;
+            }
+
+            /* 按钮文本样式 */
+            .play-music-btn span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(-45deg); /* 反转旋转 */
+                font-size: 18px;
+                color: rgb(201, 235, 10); /* 文字颜色 */
+                text-align: center; /* 文字居中 */
             }
 
         </style>
