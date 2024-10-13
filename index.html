@@ -33,6 +33,15 @@
                 cursor: pointer;
                 z-index: 1000;
             } */
+
+            button {
+                background: none;
+                border: none;
+                padding: 0;
+                margin: 0;
+                cursor: pointer;
+                outline: none;
+            }
     
             .play-music-btn{
             height: 100px;
@@ -69,7 +78,7 @@
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%, -50%) rotate(-45deg); /* 反转旋转 */
+                transform: rotate(-45deg); /* 反转旋转 */
                 font-size: 18px;
                 font-family: Arial, Helvetica, sans-serif;
                 font-weight: bold;
@@ -170,7 +179,7 @@
          </audio>
 
          <!-- 交互按钮，提示用户需要点击播放音乐 -->
-         <button class="play-music-btn" id="play-music-btn">11 minutes</button>
+         <button class="play-music-btn" id="play-music-btn">🎵11 minutes🎵</button>
 
          <script>
 
