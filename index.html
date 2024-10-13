@@ -19,7 +19,7 @@
             }
 
             /* 添加简单的提示，让用户知道需要交互 */
-            .play-music-btn {
+            /* .play-music-btn {
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -32,6 +32,48 @@
                 border-radius: 5px;
                 cursor: pointer;
                 z-index: 1000;
+            } */
+              /* 爱心按钮样式 */
+            .play-music-btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100px;
+                height: 90px;
+                background-color: #f06;
+                border-radius: 50px 50px 0 0;
+                position: relative;
+                cursor: pointer;
+            }
+
+            .play-music-btn:before,
+            .play-music-btn:after {
+                content: '';
+                width: 100px;
+                height: 90px;
+                background-color: #f06;
+                border-radius: 50px;
+                position: absolute;
+                top: 0;
+            }
+
+            .play-music-btn:before {
+                left: -50px;
+            }
+
+            .play-music-btn:after {
+                right: -50px;
+            }
+
+            /* 提示文字居中 */
+            .play-music-btn span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 16px;
+                color: white;
             }
         </style>
         <link href="css/main.min.css" rel="stylesheet" type="text/css">
@@ -110,7 +152,7 @@
 
         <div class="extra-link" id="meta-link">
             <a class="letters" href="https://github.com/iwangliguo/anniversary" target="_blank">
-                写给大宝贝的情书💌，点击网页有音乐哦🎵。
+                写给大宝贝的情书💌。
             </a>
         </div>
 
@@ -124,7 +166,7 @@
          </audio>
 
          <!-- 交互按钮，提示用户需要点击播放音乐 -->
-         <button class="play-music-btn" id="play-music-btn">播放背景音乐</button>
+         <button class="play-music-btn" id="play-music-btn">🎵🎵🎵</button>
 
          <script>
 
