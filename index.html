@@ -33,29 +33,35 @@
                 cursor: pointer;
                 z-index: 1000;
             } */
-                /* 爱心按钮样式 */
-            .play-music-btn {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 100px; /* 按钮宽度 */
-                height: 100px; /* 按钮高度 */
-                background-color: #f06; /* 按钮颜色 */
-                clip-path: path('M50 0 C77 0, 100 23, 100 50 C100 77, 77 100, 50 100 C23 100, 0 77, 0 50 C0 23, 23 0, 50 0 Z'); /* 使用 clip-path 创建爱心形状 */
-                border: none;
-                cursor: pointer;
-                display: flex;
-                justify-content: center;
-                align-items: center; /* 垂直居中 */
+    
+            .play-music-btn{
+            height: 200px;
+            width: 200px;
+            /*border: 2px solid black;*/
+            position: relative;
+            transform: rotate(45deg);
+            background-color: #f06;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* 垂直居中 */
             }
 
-            /* 按钮文本样式 */
-            .play-music-btn span {
-                font-size: 16px;
-                color: rgb(25, 12, 95); /* 文字颜色 */
-                text-align: center; /* 文字居中 */
+            .play-music-btn:before,.play-music-btn:after{
+                content: '';
+                width: 200px;
+                height: 200px;
+                /*border: 2px solid black;*/
+                border-radius: 50%;
+                position: absolute;
+                left: -100px;
+                background-color: #f06;
             }
+
+            .play-music-btn:after{
+                left: 0;
+                top: -100px;
+            }
+            
         </style>
         <link href="css/main.min.css" rel="stylesheet" type="text/css">
         <link rel="Shortcut Icon" href="favicon.ico"/>
