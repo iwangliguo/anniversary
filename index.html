@@ -33,48 +33,50 @@
                 cursor: pointer;
                 z-index: 1000;
             } */
-              /* 爱心按钮样式 */
-            .play-music-btn {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 100px;
-                height: 90px;
-                background-color: #f06;
-                border-radius: 50px 50px 0 0;
-                position: relative;
-                cursor: pointer;
-            }
+                /* 爱心按钮样式 */
+                .play-music-btn {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) rotate(45deg); /* 旋转 45 度 */
+                    width: 100px; /* 调整宽度 */
+                    height: 100px; /* 调整高度 */
+                    background-color: #f06; /* 按钮颜色 */
+                    border: none;
+                    border-radius: 50%; /* 变为圆形以便后续调整 */
+                    cursor: pointer;
+                }
 
-            .play-music-btn:before,
-            .play-music-btn:after {
-                content: '';
-                width: 100px;
-                height: 90px;
-                background-color: #f06;
-                border-radius: 50px;
-                position: absolute;
-                top: 0;
-            }
+                .play-music-btn:before,
+                .play-music-btn:after {
+                    content: '';
+                    position: absolute;
+                    width: 100px; /* 左右半圆的宽度 */
+                    height: 100px; /* 左右半圆的高度 */
+                    background-color: #f06; /* 半圆的颜色 */
+                    border-radius: 50%; /* 半圆形 */
+                }
 
-            .play-music-btn:before {
-                left: -50px;
-            }
+                .play-music-btn:before {
+                    left: 0; /* 左半圆的位置 */
+                    top: 0; /* 向上移动 */
+                }
 
-            .play-music-btn:after {
-                right: -50px;
-            }
+                .play-music-btn:after {
+                    right: 0; /* 右半圆的位置 */
+                    top: 0; /* 向上移动 */
+                }
 
-            /* 提示文字居中 */
-            .play-music-btn span {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-size: 16px;
-                color: white;
-            }
+                /* 提示文字居中 */
+                .play-music-btn span {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) rotate(-45deg); /* 反转旋转 */
+                    font-size: 16px;
+                    color: white; /* 文字颜色 */
+                    text-align: center; /* 文字居中 */
+                }
         </style>
         <link href="css/main.min.css" rel="stylesheet" type="text/css">
         <link rel="Shortcut Icon" href="favicon.ico"/>
@@ -166,7 +168,7 @@
          </audio>
 
          <!-- 交互按钮，提示用户需要点击播放音乐 -->
-         <button class="play-music-btn" id="play-music-btn">🎵🎵🎵</button>
+         <button class="play-music-btn" id="play-music-btn">播放音乐🎵🎵🎵</button>
 
          <script>
 
